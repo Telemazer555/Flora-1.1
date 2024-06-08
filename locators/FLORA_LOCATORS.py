@@ -20,7 +20,12 @@ class LOCATORS():
            '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div/div[1]/div[2]')
     CONTINUE_ASP = ('xpath',
            '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[1]/div[2]/div/button[2]')
-    CONTINUE_ASP = ('xpath',
+    INPYT_SOTR = ('xpath',
            '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[3]/div/div/div/div/div[2]/input')
+    NAZNACIT = ('xpath',
+           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button')
+    BATTON = ('xpath',
+           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[1]/div[2]/div/button[2]')
+    ASP = ('xpath',
+           '/html/body/div[1]/div[1]/div/div[1]/div[2]/div/div/div/main/div/section/div/div/div[1]/div[1]/p')
 
-    

@@ -49,8 +49,15 @@ wait.until(EC.visibility_of_element_located(LOCATORS.FIO_CONTINUE_2IS4)).click()
 wait.until(EC.visibility_of_element_located(LOCATORS.FIO_CONTINUE_2IS4)).click()
 
 wait.until(EC.visibility_of_element_located(LOCATORS.SALE_ASP)).click()
-
+sleep(2)
 wait.until(EC.visibility_of_element_located(LOCATORS.CONTINUE_ASP)).click()
+sleep(2)
+wait.until(EC.visibility_of_element_located(LOCATORS.INPYT_SOTR)).click()
+
+wait.until(EC.visibility_of_element_located(LOCATORS.NAZNACIT)).click()
+
+wait.until(EC.visibility_of_element_located(LOCATORS.BATTON)).click()
+wait.until(EC.visibility_of_element_located(LOCATORS.ASP)).click()
 
 
 
