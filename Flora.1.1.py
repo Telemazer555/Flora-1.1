@@ -22,8 +22,6 @@ driver.get(url)
 wait = WebDriverWait(driver, 15, poll_frequency=1)
 sleep(3)
 
-
-
 ### Вводим логин ###
 wait.until(EC.visibility_of_element_located(LOCATORS.EMAIL)).click()
 wait.until(EC.visibility_of_element_located(LOCATORS.EMAIL)).send_keys('st_pk_asp_mitsu')
@@ -38,30 +36,28 @@ wait.until(EC.visibility_of_element_located(LOCATORS.ADD_PLUS)).click()
 wait.until(EC.visibility_of_element_located(LOCATORS.VIZIT)).click()
 ### жмём продолжить  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.CONTINUE)).click()
-### Вводим ФИО  ###
+### жмём в поле ФИО  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.FIO)).click()
+### Вводим ФИО  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.FIO_INPUT)).send_keys('Ассылов Евгений Сергеевич')
-
+### Нажимаем Продолжить ###
 wait.until(EC.visibility_of_element_located(LOCATORS.FIO_CONTINUE)).click()
-
+### Выбор в выпадающем окне  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.FIO_CONTINUE_2IS4)).click()
-
+### Нажатие продолжить  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.FIO_CONTINUE_2IS4)).click()
-
+### Выбор продажи АСП ###
 wait.until(EC.visibility_of_element_located(LOCATORS.SALE_ASP)).click()
-sleep(2)
+### жмём кнопку продолжить ###
 wait.until(EC.visibility_of_element_located(LOCATORS.CONTINUE_ASP)).click()
-sleep(2)
+### нажимаем в поле выбор сотрудника  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.INPYT_SOTR)).click()
-
+### Назначаем себя  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.NAZNACIT)).click()
-
+### жмём создать потребность ###
 wait.until(EC.visibility_of_element_located(LOCATORS.BATTON)).click()
+### Заходим в потребность  ###
 wait.until(EC.visibility_of_element_located(LOCATORS.ASP)).click()
 
-
-
-
-
-driver.save_screenshot('sceen.png')
+# driver.save_screenshot('sceen.png')
 sleep(3000)
