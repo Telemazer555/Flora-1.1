@@ -52,7 +52,7 @@ wait.until(EC.visibility_of_element_located(LOCATORS.SALE_ASP)).click()
 
 wait.until(EC.visibility_of_element_located(LOCATORS.CONTINUE_ASP)).click()
 
-
+шляпа полная сел в шляпу а она ему какраз
 
 
 
