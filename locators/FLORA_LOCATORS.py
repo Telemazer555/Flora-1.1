@@ -1,3 +1,27 @@
+class Scrolls:
+
+    def __init__(self, driver, action):
+        self.driver = driver
+        self.action = action
+
+    def scroll_by(self, x, y):
+        self.driver.execute_script(f"window.scrollTo({x}, {y})")
+
+    def scroll_to_bottom(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+
+    def scroll_to_top(self):
+        self.driver.execute_script("window.scrollTo(0, 0)")
+
+    def scroll_to_element(self, element):
+        self.action.scroll_to_element(element).perform()
+        self.driver.execute_script("""
+        window.scrollTo({
+            top: window.scrollY + 700,
+        });
+        """)
+
+
 class LOCATORS():
     EMAIL = ("id", "username")
     PASSWORD = ("id", "password")
@@ -11,21 +35,30 @@ class LOCATORS():
     FIO = ('xpath',
            '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/div')
     FIO_INPUT = ('xpath',
-           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/div/div[2]/input')
+                 '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/div/div[2]/input')
+    # FIO_CONTINUE = ('xpath',
+    #                 '//div[@class="or-autocomplete__options-list-wrapper"]')
     FIO_CONTINUE = ('xpath',
-           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div[2]/div/ul/li/div')
+                    '//div[@class="or-select-item search-client-widget__item"]')
+
     FIO_CONTINUE_2IS4 = ('xpath',
-           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/div[2]/div')
+                         '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/div[2]/div')
     SALE_ASP = ('xpath',
-           '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div/div[1]/div[2]')
+                '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div/div[1]/div[2]')
     CONTINUE_ASP = ('xpath',
-           '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[1]/div[2]/div/button[2]')
+                    '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[1]/div[2]/div/button[2]')
     INPYT_SOTR = ('xpath',
-           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[3]/div/div/div/div/div[2]/input')
+                  '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[3]/div/div/div/div/div[2]/input')
     NAZNACIT = ('xpath',
-           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button')
+                '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button')
     BATTON = ('xpath',
-           '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[1]/div[2]/div/button[2]')
+              '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[1]/div[2]/div/button[2]')
     ASP = ('xpath',
            '/html/body/div[1]/div[1]/div/div[1]/div[2]/div/div/div/main/div/section/div/div/div[1]/div[1]/p')
-
+    # ADD_BUTTON = (
+    #     'xpath' '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide asp-sell-selection__car-buttons-item"]')
+    ADD2 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide asp-sell-selection__car-buttons-item"]'
+    SDELKA = 'xpath', '//span[@class="or-tab-notification t5 or-tab-notification_active"]'
+    SDELKA_AM = 'xpath', '//div[@class="asp-deal__panel-car-content"]'
+    SDELKA_BUTTON = 'xpath', '//button[@class = "or-button or-button_color-pink or-button_md or-button_wide or-button_primary asp-deal-sell-offer-generation__submit-button"]'
+    SDELKA_BUTTON_YES = 'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary confirm-option-modal__footer-button"]'

@@ -1,0 +1,103 @@
+1) Платформика - трейсы.
+https://cc-asp.plf.int.rolfcorp.ru/tracing/development/
+2) Jira доска команды - https://jira.rlf-tech.com/secure/RapidBoard.jspa?rapidView=766&view=planning.nodetail&issueLimit=100.
+3) Confluence - https://confluence.rlf-tech.com/#all-updates.
+4) Фишблю (система продажи БУ автомоблей) - https://dp-aswt:24050/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
+5) Менеджер перезаливок тестовых баз - http://dp-teamcity-2:8082/
+6) Модуль ПФ (шаблоны печатных форм - тест) - https://fe-pforms-main.com-dev.int.rolfcorp.ru/templates#state=0355cc04-e640-4f86-9aa3-04d21e062431&session_state=e650f210-af63-4ca8-bcad-ef871038fe58&code=429b3912-1538-400f-8afe-de4f7a078335.e650f210-af63-4ca8-bcad-ef871038fe58.28001e5d-8e08-4729-83bd-8fc5c5ed094b
+7) Регламент работы с багами - https://confluence.rolf.ru/pages/viewpage.action?pageId=82580846
+8) АПИМ - https://ui-apim.plf.int.rolfcorp.ru/home
+РОП
+ Asyupin \ Qw54321
+Eiutkin/Rolf1122
+10) Тестовые юзеры - https://confluence.rlf-tech.com/pages/viewpage.action?pageId=35095849.
+
+Тестовые контуры ФЛОРА
+
+https://flora-host-preprod.com-dev.int.rolfcorp.ru/ - ти14
+https://flora-host-test.com-dev.int.rolfcorp.ru/ - ти46
+https://flora-host-dev.com-dev.int.rolfcorp.ru/ -ти50 новый дев
+
+https://flora.rolf.ru/desktop/ieddleqv2vsb/task -бой
+https://corenew-preprodaspfi.com-dev.int.rolfcorp.ru/ Оракл база 14 F&I
+http://10.53.241.48:9001/#!/app/CarWorkByUserScreen wms лог/пароль: t/t
+
+Уткин Евгений Игоревич
+Ассылов Евгений Сергеевич
+Сырбу Борис Григорьевич
+Сапельченко Жанна Сергеевна -
+Вишнякова Полина Владимировна
+ыусрб лнркаеадс евогирчиег
+Агаев Павел Вячеславович
+Корсаков Сергей Владимировичz
+
+Тестовые базы Оракла
+https://dp-aswt:24050/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
+https://dp-aswt:24014/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
+https://dp-aswt:24046/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
+nfkohtyuk / 15399123123
+https://fe-pforms-prod.com-prod.int.rolfcorp.ru/ - печатные бой
+https://fe-pforms-preprod.com-dev.int.rolfcorp.ru/ печатные формы
+https://fe-pforms-main.com-dev.int.rolfcorp.ru/ печатные дев
+
+МДС\СРЦ http://dlc-mds-app.int.rolfcorp.ru/add/
+x-request-id=
+
+ключи для запросов в постман
+apim-asp-debug: WOMVmgW35WiuVXsDqeQnvFL8eFM6aDDU
+apim-asp-dev: WOMVmgW35WiuVXsDqeQnvFL8eFM6aDDU
+apim-asp-preprod: JzbdCXgINOOQfxK3wvl2oKC2DuLN9KYY
+apim-asp-prod: x2Uo9OGgTJiFk9I0snn2jy5HhB56eA5c
+apim-asp-test: Tn2wN56E5Ml2PNxE3ekpSRDTqoJrvcdo
+сбер код подтверждения 123456
+https://doc-orders-main.com-dev.int.rolfcorp.ru/03_methods/01_rest/01_needs/13_get_needs/ документация
+asp, payments, service, fi, coreapp, rolfid, carid, clientid, taskandevent для платформико
+
+
+ESTROFIMOVA- Роп юг
+Alena1291218
+
+GRSIDORKINA
+Пароль: Sadik321456789
+
+allow pasting
+дил статус  window.isAspDealStatusBlocked = true;
+ window.isAspDealStatusBlocked = false
+
+https://confluence.rlf-tech.com/pages/viewpage.action?pageId=29617755 для теражирования
+
+Масло моторное LUKOIL SPECIAL С3 5W-30, API SN, ACEA C2/C3 MB-Approval 229.51, 229.52, GM dexos2, Renault RN 0700/0710, BMW LL-04, Fiat 9.55535-S3, PSA B71 2290, MB 226.5, 229.31 200л
+
+
+
+
+
+
+
+
+
+АСП. Исправление ошибок Q4
+
+Окружение: pre-prod
+
+Пользователь: st_pk_asp_mitsu, GRSIDORKINA
+
+URL: https://flora-host-preprod.com-dev.int.rolfcorp.ru/asp_sell/ikdvrqxbx6cp/vehicle-need/c8ab2baf-001f-4f42-9b1a-ea845b9a0685/deal/9e591d1b-5ff3-4932-a398-42437dbfe852/sell-offer-generation?cartUuid=28604e69-81f9-4c11-b7bc-bdf3bee5683d
+
+ТРЕЙС: 
+https://jaeger-query-asp-preprod.plf-dev.int.rolfcorp.ru/trace/5526931a1a83d6927db31864ad517f94
+
+Кейс: 
+1.Создать потребность АСП
+2.Добавить а\м в сделку
+3.Перейти на шаг "формирование КП"
+4.Перейти в 1 корзину 
+6.Нажать "добавить" у опциона "Работы"
+7.Выбрать:
+"Установка видеорегистратора для BF"
+"Антикоррозионная обработка кузова"
+"Антикоррозионная обработка кузова-полная."
+8.Нажать "добавить"
+
+ОР: Опцион добавлен в КП
+ФР: Опцион не добавлен в КП падает метод "flora/asp/common/v1/needs/"
