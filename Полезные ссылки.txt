@@ -31,6 +31,9 @@ http://10.53.241.48:9001/#!/app/CarWorkByUserScreen wms лог/пароль: t/t
 Агаев Павел Вячеславович
 Корсаков Сергей Владимировичz
 
+
+
+
 Тестовые базы Оракла
 https://dp-aswt:24050/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
 https://dp-aswt:24014/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
@@ -70,8 +73,8 @@ https://confluence.rlf-tech.com/pages/viewpage.action?pageId=29617755 для т�
 
 
 
-
-
+Запуск дебагера через 5 секунд
+setTimeout(function() { debugger; }, 5000);
 
 
 

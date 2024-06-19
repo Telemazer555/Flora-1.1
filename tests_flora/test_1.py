@@ -4,10 +4,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
-
+from tests_flora.TEST_FLORA_DEAL import FLORA
 from locators.FLORA_LOCATORS import LOCATORS
 
-url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/asp_sell/ibw9ixjg2orz/vehicle-need/9ccfd8ac-9f4d-4500-8ec8-919eb8f53c7e/selection'
+# url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/asp_sell/ibw9ixjg2orz/vehicle-need/9ccfd8ac-9f4d-4500-8ec8-919eb8f53c7e/selection'
 
 options = Options()
 options.add_argument("--window-size=1920,1080")
@@ -24,7 +24,7 @@ options.add_argument("--window-size=1920,1080")
 #     print(i.text)
 
 driver = webdriver.Chrome(options=options)
-driver.get(url)
+driver.get(FLORA.url_deal)
 wait = WebDriverWait(driver, 15, poll_frequency=1)
 long_wait = WebDriverWait(driver, 150, poll_frequency=1)
 sleep(3)

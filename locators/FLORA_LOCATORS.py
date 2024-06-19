@@ -17,15 +17,24 @@ class Scrolls:
         self.action.scroll_to_element(element).perform()
         self.driver.execute_script("""
         window.scrollTo({
-            top: window.scrollY + 700,
+            top: window.scrollY + 900,
         });
         """)
 
 
-class LOCATORS():
+class LOCATORS:
     EMAIL = ("id", "username")
     PASSWORD = ("id", "password")
     LOGIN = ("id", "kc-login")
+    DS_ALTYWKA = ('xpath', '//div[@class="time-tracker__dc t4"]')
+    DS_ALTYWKA_1 = ('xpath', '//div[@class="timer-button t1 timer-button_started timer-button_with-events"]')
+    DS_ALTYWKA_2 = (
+    'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
+    DS_ALTYWKA_ELSE = ('xpath', '//*[text()="Начать рабочий день"]')
+    DS_ALTYWKA_3 = ('xpath', '//*[text()="ДЦ Алтуфьево Митцубиши" ]')
+    DS_ALTYWKA_4 = (
+    'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
+
     ADD_PLUS = ('xpath', '/html/body/div/div[1]/div/header/div[1]/button/span[1]')
     VIZIT = (
         'xpath', '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[1]/div[2]/div/div/button[1]')
@@ -36,8 +45,6 @@ class LOCATORS():
            '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/div')
     FIO_INPUT = ('xpath',
                  '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/div/div[2]/input')
-    # FIO_CONTINUE = ('xpath',
-    #                 '//div[@class="or-autocomplete__options-list-wrapper"]')
     FIO_CONTINUE = ('xpath',
                     '//div[@class="or-select-item search-client-widget__item"]')
 
@@ -55,10 +62,17 @@ class LOCATORS():
               '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[1]/div[2]/div/button[2]')
     ASP = ('xpath',
            '/html/body/div[1]/div[1]/div/div[1]/div[2]/div/div/div/main/div/section/div/div/div[1]/div[1]/p')
-    # ADD_BUTTON = (
-    #     'xpath' '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide asp-sell-selection__car-buttons-item"]')
     ADD2 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide asp-sell-selection__car-buttons-item"]'
     SDELKA = 'xpath', '//span[@class="or-tab-notification t5 or-tab-notification_active"]'
     SDELKA_AM = 'xpath', '//div[@class="asp-deal__panel-car-content"]'
     SDELKA_BUTTON = 'xpath', '//button[@class = "or-button or-button_color-pink or-button_md or-button_wide or-button_primary asp-deal-sell-offer-generation__submit-button"]'
     SDELKA_BUTTON_YES = 'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary confirm-option-modal__footer-button"]'
+    PDKP = 'xpath', '//li[@class="asp-deal__content-panel-list-item"]'
+    PDKP_PODPISANT = 'xpath', '//div[@class="or-autocomplete__inner-search"]'
+    PDKP_PODPISANT_CLICK = 'xpath', '//ul[@class="or-autocomplete__options-list"]//li'
+    PDKP_INPUT_1 = 'xpath', '//input[@class="or-base-input__input t1"]'
+    PDKP_INPUT_2 = 'xpath', '//input[@class="or-base-input__input t1"]'
+    PDKP_BUTTON = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_md or-button_wide asp-deal-sign-pdkp__actions-submit"]'
+    PDKP_BUTTON2 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide legal-document-card__control-button"]'
+    PDKP_BUTTON3 = 'xpath', '//div[@class="or-checkbox__button or-checkbox__button_md or-checkbox__button_usual"]'
+    PDKP_BUTTON4 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_md-fluid or-button_wide legal-document-modal__footer-buttons-item"]'
