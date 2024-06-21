@@ -20,7 +20,7 @@ class FB:
     options = Options()
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--incognito")
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     ### включение юзер агента и обнужение автоматизации ###
     # options.add_argument("--disable-blink-features=AutomationControlled")
     # options.add_argument(
@@ -29,10 +29,12 @@ class FB:
     driver = webdriver.Chrome(options=options)
     driver.get(url)
     wait = WebDriverWait(driver, 20, poll_frequency=1)
-    long_wait = WebDriverWait(driver, 120, poll_frequency=1)
+    long_wait = WebDriverWait(driver, 600, poll_frequency=1)
     action = ActionChains(driver)
     scrolls = Scrolls(driver, action)
-    # sleep(300)
+    with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\VIN.py', mode='r',
+              encoding='utf-8') as file_vin:
+        VIN = file_vin.read()
 
     ### Вводим логин ###
     wait.until(EC.visibility_of_element_located(LOCATORS_FB.EMAIL)).click()
@@ -46,8 +48,11 @@ class FB:
     wait.until(EC.visibility_of_all_elements_located(LOCATORS_FB.CLOSE))[0].click()
     wait.until(EC.visibility_of_element_located(LOCATORS_FB.DOKYMENT)).click()
     wait.until(EC.visibility_of_element_located(LOCATORS_FB.SOP)).click()
-    wait.until(EC.visibility_of_element_located(LOCATORS_FB.VIN)).send_keys('vin')
+    wait.until(EC.visibility_of_element_located(LOCATORS_FB.VIN)).send_keys(VIN)
     wait.until(EC.visibility_of_element_located(LOCATORS_FB.BUTTON_GO)).click()
-
-
-    sleep(500)
+    wait.until(EC.visibility_of_element_located(LOCATORS_FB.HREF)).click()
+    wait.until(EC.visibility_of_element_located(LOCATORS_FB.PAY)).click()
+    wait.until(EC.visibility_of_element_located(LOCATORS_FB.PAY_BUTTON)).click()
+    SAVE = wait.until(EC.visibility_of_element_located(LOCATORS_FB.PAY_BUTTON_SAVE))
+    SAVE.click()
+    print('Предоплата прошла !')

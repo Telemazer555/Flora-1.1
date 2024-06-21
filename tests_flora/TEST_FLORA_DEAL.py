@@ -10,12 +10,13 @@ from selenium.webdriver import Keys
 from locators.FLORA_LOCATORS import LOCATORS
 from locators.FLORA_LOCATORS import Scrolls
 import json
+import random
 
 
 class FLORA:
-    # url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/'
+    url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/'
     # url = 'https://flora-host-dev.com-dev.int.rolfcorp.ru'
-    url = 'https://flora-host-test.com-dev.int.rolfcorp.ru/'
+    # url = 'https://flora-host-test.com-dev.int.rolfcorp.ru/'
 
     options = Options()
     options.add_argument("--window-size=1920,1080")
@@ -92,9 +93,17 @@ class FLORA:
     ### Заходим в потребность  ###
     wait.until(EC.visibility_of_element_located(LOCATORS.ASP)).click()
     ### Добавляем а\м в сделку   ###
-    ADDBUTTON = (long_wait.until(EC.visibility_of_all_elements_located(LOCATORS.ADD2)))[2]
+    ADDBUTTON = (long_wait.until(EC.visibility_of_all_elements_located(LOCATORS.ADD2)))[random.randint(0, 10)]
     scrolls.scroll_to_element(ADDBUTTON)
     ADDBUTTON.click()
+    VIN_ASERT = long_wait.until(EC.visibility_of_element_located(LOCATORS.VIN_ASERT))
+    if VIN_ASERT.text == 'Добавлено':
+        VIN = wait.until(EC.visibility_of_element_located(LOCATORS.VIN))
+        print(VIN.text)
+        with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\VIN.py', mode='w',
+                  encoding='utf-8') as file_vin:
+            file_vin.write(VIN.text)
+
     ### Дожидаемся пока в сделку добавится а\м больше 1   ###
     SDELKA_ASSERT = long_wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA))
     SDELKA_ASSERT_TEXT = SDELKA_ASSERT.text
@@ -105,9 +114,9 @@ class FLORA:
 
     ### Получаем url пройденной сдеки + записываем его в другой файл   ###
     url_deal = driver.current_url
-    with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\555_test-555.py', mode='w',
-              encoding='utf-8') as file:
-        file.write(url_deal)
+    with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\URLS.py', mode='w',
+              encoding='utf-8') as file_url:
+        file_url.write(url_deal)
         print(url_deal)
     ### Нажимаем на А\М   ###
     SDELKA_AM_KP = wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA_AM))
@@ -142,4 +151,8 @@ class FLORA:
     wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON3)).click()
 
     wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON4)).click()
+    wait.until(EC.visibility_of_element_located(LOCATORS.PAY_BUTTON)).click()
+    wait.until(EC.visibility_of_element_located(LOCATORS.PAY_BUTTON_CASSA)).click()
+    wait.until(EC.visibility_of_element_located(LOCATORS.PAY_BUTTON_FORM)).click()
+    wait.until(EC.element_to_be_clickable(LOCATORS.PAY_BUTTON_FORM_CLIK)).click()
     sleep(250000)

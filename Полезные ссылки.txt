@@ -32,7 +32,8 @@ http://10.53.241.48:9001/#!/app/CarWorkByUserScreen wms лог/пароль: t/t
 Корсаков Сергей Владимировичz
 
 
-
+//span[@class="asp-sell-selection__car-vin"]/following::*[text()="Добавлено"]
+//span[text()="Добавлено"]/preceding::*[@class="asp-sell-selection__car-vin"]
 
 Тестовые базы Оракла
 https://dp-aswt:24050/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button

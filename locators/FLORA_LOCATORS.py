@@ -31,6 +31,10 @@ class LOCATORS_FB:
     SOP = ("xpath", '//a[text()="СОП на подержанные а/м"]')
     VIN = ("xpath", '//input[@name="P264_VIN"]')
     BUTTON_GO = ("xpath", '//button[@value="Применить"]')
+    HREF = ("xpath", '//td[@class=" u-tL"]/a/img')
+    PAY = ("xpath", '//a[@class="link_payment"]')
+    PAY_BUTTON = ("xpath", '//fieldset[@class="checkbox_group apex-item-checkbox"]/input[@id="P262_PAID_UP_0"]')
+    PAY_BUTTON_SAVE = ("xpath", '//button[@class="button-default"]/span[text()="Сохранить платеж"]')
 
 
 class LOCATORS:
@@ -38,6 +42,9 @@ class LOCATORS:
     PASSWORD = ("id", "password")
     LOGIN = ("id", "kc-login")
     DS_ALTYWKA = ('xpath', '//div[@class="time-tracker__dc t4"]')
+    VIN = ('xpath',
+           '//span[text()="Добавлено"]//ancestor::*[@class="asp-sell-selection__car-block"]//span[@class="asp-sell-selection__car-vin"]')
+    VIN_ASERT = ('xpath', '//div[@class="asp-sell-selection__car"]//span[text()="Добавлено"]')
     DS_ALTYWKA_1 = ('xpath', '//div[@class="timer-button t1 timer-button_started timer-button_with-events"]')
     DS_ALTYWKA_2 = (
         'xpath',
@@ -91,3 +98,7 @@ class LOCATORS:
     PDKP_BUTTON2 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide legal-document-card__control-button"]'
     PDKP_BUTTON3 = 'xpath', '//div[@class="or-checkbox__button or-checkbox__button_md or-checkbox__button_usual"]'
     PDKP_BUTTON4 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_md-fluid or-button_wide legal-document-modal__footer-buttons-item"]'
+    PAY_BUTTON = 'xpath', '//span[text()="не выбран"]'
+    PAY_BUTTON_CASSA = 'xpath', '//li[@class="or-select__options-list-item"]//span[text()="Через операционную кассу"]'
+    PAY_BUTTON_FORM = 'xpath', '//button[@class="or-button or-button_color-pink or-button_m or-button_wide or-button_primary t2"]'
+    PAY_BUTTON_FORM_CLIK = 'xpath', '//button[@class="or-button or-button_color-pink or-button_xl or-button_wide or-button_primary payment-params__content-footer-button"]'

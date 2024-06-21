@@ -1,1 +1,0 @@
-https://flora-host-test.com-dev.int.rolfcorp.ru/asp_sell/ifm9h8rr755a/vehicle-need/fb53418c-ce99-4e6e-82ee-048efed3aea3/selection

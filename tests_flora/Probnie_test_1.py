@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from locators.FLORA_LOCATORS import LOCATORS
 from locators.FLORA_LOCATORS import Scrolls
 from selenium.webdriver import Keys
-
+import random
 url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/asp_sell/iu40ftn8xpad/vehicle-need/fe50a918-d1f1-4c5d-8c5b-30386c4ef510/selection'
 
 options = Options()
@@ -67,5 +67,3 @@ long_wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON2)).click()
 wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON3)).click()
 
 wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON4)).click()
-
-class ="payment-need__item-main-title t1"]
