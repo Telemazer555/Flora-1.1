@@ -22,6 +22,17 @@ class Scrolls:
         """)
 
 
+class LOCATORS_FB:
+    EMAIL = ("xpath", '//input[@class="text_field apex-item-text"]')
+    PASSWORD = ("xpath", '//input[@class="password apex-item-text"]')
+    LOGIN = ("xpath", '//button[@class="button-default "]')
+    CLOSE = ("xpath", '//button[@class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]')
+    DOKYMENT = ("xpath", '//ul[@id="tabs"]//li[@class="first-current"]')
+    SOP = ("xpath", '//a[text()="СОП на подержанные а/м"]')
+    VIN = ("xpath", '//input[@name="P264_VIN"]')
+    BUTTON_GO = ("xpath", '//button[@value="Применить"]')
+
+
 class LOCATORS:
     EMAIL = ("id", "username")
     PASSWORD = ("id", "password")
@@ -29,11 +40,13 @@ class LOCATORS:
     DS_ALTYWKA = ('xpath', '//div[@class="time-tracker__dc t4"]')
     DS_ALTYWKA_1 = ('xpath', '//div[@class="timer-button t1 timer-button_started timer-button_with-events"]')
     DS_ALTYWKA_2 = (
-    'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
+        'xpath',
+        '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
     DS_ALTYWKA_ELSE = ('xpath', '//*[text()="Начать рабочий день"]')
     DS_ALTYWKA_3 = ('xpath', '//*[text()="ДЦ Алтуфьево Митцубиши" ]')
     DS_ALTYWKA_4 = (
-    'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
+        'xpath',
+        '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
 
     ADD_PLUS = ('xpath', '/html/body/div/div[1]/div/header/div[1]/button/span[1]')
     VIZIT = (
@@ -70,8 +83,10 @@ class LOCATORS:
     PDKP = 'xpath', '//li[@class="asp-deal__content-panel-list-item"]'
     PDKP_PODPISANT = 'xpath', '//div[@class="or-autocomplete__inner-search"]'
     PDKP_PODPISANT_CLICK = 'xpath', '//ul[@class="or-autocomplete__options-list"]//li'
-    PDKP_INPUT_1 = 'xpath', '//input[@class="or-base-input__input t1"]'
-    PDKP_INPUT_2 = 'xpath', '//input[@class="or-base-input__input t1"]'
+    PDKP_INPUT_1 = 'xpath', '//div[@class="or-base-input__wrapper or-base-input__wrapper_filled or-base-input__wrapper_label-as-placeholder or-base-input__wrapper_append"]'
+    PDKP_INPUT_1_1 = 'xpath', '/html/body/div/div[1]/div/div[1]/div/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[3]/div[2]/div/div[2]/input'
+    PDKP_INPUT_2 = 'xpath', '//div[@class="or-base-input__wrapper or-base-input__wrapper_label-as-placeholder"]'
+    PDKP_INPUT_2_2 = 'xpath', '/html/body/div[1]/div[1]/div/div[1]/div/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[3]/div[4]/div/div/div[2]/div/div/div/div[1]/div/div[2]/input'
     PDKP_BUTTON = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_md or-button_wide asp-deal-sign-pdkp__actions-submit"]'
     PDKP_BUTTON2 = 'xpath', '//button[@class="or-button or-button_color-lightpink or-button_th or-button_wide legal-document-card__control-button"]'
     PDKP_BUTTON3 = 'xpath', '//div[@class="or-checkbox__button or-checkbox__button_md or-checkbox__button_usual"]'

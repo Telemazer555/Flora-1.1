@@ -14,8 +14,8 @@ import json
 
 class FLORA:
     # url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/'
-    url = 'https://flora-host-dev.com-dev.int.rolfcorp.ru'
-    # url = 'https://flora-host-test.com-dev.int.rolfcorp.ru/'
+    # url = 'https://flora-host-dev.com-dev.int.rolfcorp.ru'
+    url = 'https://flora-host-test.com-dev.int.rolfcorp.ru/'
 
     options = Options()
     options.add_argument("--window-size=1920,1080")
@@ -28,7 +28,7 @@ class FLORA:
 
     driver = webdriver.Chrome(options=options)
     driver.get(url)
-    wait = WebDriverWait(driver, 30, poll_frequency=1)
+    wait = WebDriverWait(driver, 20, poll_frequency=1)
     long_wait = WebDriverWait(driver, 120, poll_frequency=1)
     action = ActionChains(driver)
     scrolls = Scrolls(driver, action)
@@ -56,6 +56,7 @@ class FLORA:
         selection_ds_mitsu_button = wait.until(EC.visibility_of_element_located(LOCATORS.DS_ALTYWKA_4))
         scrolls.scroll_to_element(selection_ds_mitsu_button)
         selection_ds_mitsu_button.click()
+        driver.refresh()
         print('кто-то накликал другой дц)')
 
     ### жмём добавить (+)  ###
@@ -102,45 +103,43 @@ class FLORA:
     else:
         print('Чёт хуйня какая то хз')
 
+    ### Получаем url пройденной сдеки + записываем его в другой файл   ###
     url_deal = driver.current_url
-    file = open(r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\555_test-555.py', 'a+', encoding='utf-8')
-    file.write(url_deal)
-    file.write(\n)
-    file.close()
+    with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\555_test-555.py', mode='w',
+              encoding='utf-8') as file:
+        file.write(url_deal)
+        print(url_deal)
+    ### Нажимаем на А\М   ###
+    SDELKA_AM_KP = wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA_AM))
+    scrolls.scroll_to_element(SDELKA_AM_KP)
+    SDELKA_AM_KP.click()
+    # sleep(12)
+    ### Кликаем на 4 пункт дкп   ###
+    sleep(12)  ### убрать слипы добавить проверку на появление элемента ну и найти элемент ###
+    PDKP = wait.until(EC.visibility_of_all_elements_located(LOCATORS.PDKP))[1]
+    PDKP.click()
+    ### Кликаем на выбор подписанта    ###
+    sleep(12)  ### убрать слипы добавить проверку на появление элемента ну и найти элемент ###
+    wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_PODPISANT)).click()
+    PODPISANT = wait.until(EC.visibility_of_all_elements_located(LOCATORS.PDKP_PODPISANT_CLICK))[0]
+    scrolls.scroll_to_element(PODPISANT)
+    PODPISANT.click()
+    ### Кликаем и вписываем цену пдкп   ###
+    INPUT_1 = wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_INPUT_1))
+    INPUT_1.click()
+    INPUT_1_1 = wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_INPUT_1_1))
+    INPUT_1_1.send_keys('60000')
+    ### Кликаем выбираем дату действия пдкп    ###
+    INPUT_2 = wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_INPUT_2))
+    INPUT_2.click()
+    INPUT_2_2 = wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_INPUT_2_2))
+    INPUT_2_2.send_keys('08.06.2030')
+    ### Кликаем продписать пдкп    ###
+    wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON)).click()
 
-    #
-    # sleep(5000)
-    # ### Нажимаем на А\М   ###
-    # SDELKA_AM_KP = wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA_AM))
-    # scrolls.scroll_to_element(SDELKA_AM_KP)
-    # SDELKA_AM_KP.click()
-    # ### Кликаем на 4 пункт дкп   ###
-    # PDKP = wait.until(EC.visibility_of_all_elements_located(LOCATORS.PDKP))[1]
-    # PDKP.click()
-    # wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_PODPISANT)).click()
-    # sleep(3)
-    # PODPISANT = wait.until(EC.visibility_of_all_elements_located(LOCATORS.PDKP_PODPISANT_CLICK))[0]
-    # scrolls.scroll_to_element(PODPISANT)
-    # PODPISANT.click()
-    #
-    # INPUT_1 = wait.until(EC.visibility_of_all_elements_located(LOCATORS.PDKP_INPUT_1))[0]
-    # INPUT_1.clear()
-    # INPUT_1.send_keys('60000')
-    #
-    # INPUT_2 = wait.until(EC.visibility_of_all_elements_located(LOCATORS.PDKP_INPUT_2))[1]
-    # INPUT_2.clear()
-    # INPUT_2.send_keys('08.06.2090')
-    #
-    # wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON)).click()
-    # wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON2)).click()
-    # wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON3)).click()
-    # wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON4)).click()
-    #
-    # ### На шаге формирования кп нажимаем продолжить   ###
-    # BUTTON_AM = wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA_BUTTON))
-    # scrolls.scroll_to_element(BUTTON_AM)
-    # BUTTON_AM.click()
-    # ### Жмём продолжить без опциона ###
-    # wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA_BUTTON_YES)).click()
-    # wait.until(EC.visibility_of_element_located(LOCATORS.SDELKA_BUTTON_YES)).click()
-    # sleep(25000000)
+    long_wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON2)).click()
+
+    wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON3)).click()
+
+    wait.until(EC.visibility_of_element_located(LOCATORS.PDKP_BUTTON4)).click()
+    sleep(250000)

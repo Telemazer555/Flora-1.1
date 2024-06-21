@@ -45,6 +45,7 @@ https://fe-pforms-main.com-dev.int.rolfcorp.ru/ печатные дев
 
 МДС\СРЦ http://dlc-mds-app.int.rolfcorp.ru/add/
 x-request-id=
+f437a23549d0c55b1d2f717c617b80d7
 
 ключи для запросов в постман
 apim-asp-debug: WOMVmgW35WiuVXsDqeQnvFL8eFM6aDDU
@@ -104,3 +105,38 @@ https://jaeger-query-asp-preprod.plf-dev.int.rolfcorp.ru/trace/5526931a1a83d6927
 
 ОР: Опцион добавлен в КП
 ФР: Опцион не добавлен в КП падает метод "flora/asp/common/v1/needs/"
+
+
+
+
+
+
+
+
+
+
+Никита Кохтюк, [20.06.2024 15:21]
+это настройки оракл базы
+
+Никита Кохтюк, [20.06.2024 15:21]
+select redb.*
+      from apex.db_inst_redirectb_w redb
+          ,apex.db_inst_redirectd_w redd
+     where redb.db_inst_redirectd_id = redd.db_inst_redirectd_id
+       and redd.d = 'DASH_MDS';
+
+Никита Кохтюк, [20.06.2024 15:21]
+ищем нащу базу
+
+Никита Кохтюк, [20.06.2024 15:21]
+в нашем случае 46, там две записи
+
+Никита Кохтюк, [20.06.2024 15:21]
+если видим что там https
+
+Никита Кохтюк, [20.06.2024 15:21]
+то делаем апдейт этих двух записей на http
+
+Никита Кохтюк, [20.06.2024 15:21]
+update apex.db_inst_redirectb_w t set t.REDIRECT_VALUE = 'http://dp-aswt:19400/bolnk/instances/tst46'
+where t.DB_INST_REDIRECTB_ID in (16870,16998);
