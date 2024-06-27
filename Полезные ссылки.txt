@@ -32,9 +32,6 @@ http://10.53.241.48:9001/#!/app/CarWorkByUserScreen wms лог/пароль: t/t
 Корсаков Сергей Владимировичz
 
 
-//span[@class="asp-sell-selection__car-vin"]/following::*[text()="Добавлено"]
-//span[text()="Добавлено"]/preceding::*[@class="asp-sell-selection__car-vin"]
-
 Тестовые базы Оракла
 https://dp-aswt:24050/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
 https://dp-aswt:24014/apex/f?p=107:LOGIN_DESKTOP::::::#no-back-button
@@ -107,6 +104,14 @@ https://jaeger-query-asp-preprod.plf-dev.int.rolfcorp.ru/trace/5526931a1a83d6927
 ОР: Опцион добавлен в КП
 ФР: Опцион не добавлен в КП падает метод "flora/asp/common/v1/needs/"
 
+
+
+
+HC_VAULT_ROLE_ID
+82e8c670-29dc-0363-6f51-31498d4d52e3
+
+HC_VAULT_SECRET_ID
+08cd1938-bee7-8f85-63ea-e011519107ae
 
 
 

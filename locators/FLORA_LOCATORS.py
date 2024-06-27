@@ -35,6 +35,7 @@ class LOCATORS_FB:
     PAY = ("xpath", '//a[@class="link_payment"]')
     PAY_BUTTON = ("xpath", '//fieldset[@class="checkbox_group apex-item-checkbox"]/input[@id="P262_PAID_UP_0"]')
     PAY_BUTTON_SAVE = ("xpath", '//button[@class="button-default"]/span[text()="Сохранить платеж"]')
+    ODIN_IZ_15 = ("xpath", '//img[@src="/EXT/TST14/Images/rolf/edit_small.gif"]')
 
 
 class LOCATORS:
@@ -102,3 +103,4 @@ class LOCATORS:
     PAY_BUTTON_CASSA = 'xpath', '//li[@class="or-select__options-list-item"]//span[text()="Через операционную кассу"]'
     PAY_BUTTON_FORM = 'xpath', '//button[@class="or-button or-button_color-pink or-button_m or-button_wide or-button_primary t2"]'
     PAY_BUTTON_FORM_CLIK = 'xpath', '//button[@class="or-button or-button_color-pink or-button_xl or-button_wide or-button_primary payment-params__content-footer-button"]'
+    PAY_BUTTON_FORM_CLIK_OK = 'xpath', '//button[@class="or-button or-button_color-pink or-button_m or-button_wide or-button_primary t2"]'

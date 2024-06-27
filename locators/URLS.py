@@ -1,1 +1,1 @@
-https://flora-host-preprod.com-dev.int.rolfcorp.ru/asp_sell/iyqr6q2vfcj1/vehicle-need/baa2bbb4-9836-4803-8299-5b1deb9c8c2f/selection
+https://flora-host-preprod.com-dev.int.rolfcorp.ru/asp_sell/iuuziw4m1bgs/vehicle-need/4e1535e3-c125-4e82-ac12-fb7dfcb51ab5/selection

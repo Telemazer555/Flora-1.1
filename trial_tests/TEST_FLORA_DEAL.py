@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,12 +13,14 @@ from locators.FLORA_LOCATORS import LOCATORS
 from locators.FLORA_LOCATORS import Scrolls
 import json
 import random
+import datetime
 
 
 class FLORA:
-    url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/'
-    # url = 'https://flora-host-dev.com-dev.int.rolfcorp.ru'
-    # url = 'https://flora-host-test.com-dev.int.rolfcorp.ru/'
+    start = datetime.datetime.now()
+    url = 'https://flora-host-preprod.com-dev.int.rolfcorp.ru/'  ### PRE-PROD
+    # url = 'https://flora-host-dev.com-dev.int.rolfcorp.ru'      ### DEV
+    # url = 'https://flora-host-test.com-dev.int.rolfcorp.ru/'    ### TEST
 
     options = Options()
     options.add_argument("--window-size=1920,1080")
@@ -100,7 +104,7 @@ class FLORA:
     if VIN_ASERT.text == 'Добавлено':
         VIN = wait.until(EC.visibility_of_element_located(LOCATORS.VIN))
         print(VIN.text)
-        with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\VIN.py', mode='w',
+        with open(file=r'/locators/VIN.py', mode='w',
                   encoding='utf-8') as file_vin:
             file_vin.write(VIN.text)
 
@@ -114,7 +118,7 @@ class FLORA:
 
     ### Получаем url пройденной сдеки + записываем его в другой файл   ###
     url_deal = driver.current_url
-    with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\URLS.py', mode='w',
+    with open(file=r'/locators/URLS.py', mode='w',
               encoding='utf-8') as file_url:
         file_url.write(url_deal)
         print(url_deal)
@@ -155,4 +159,10 @@ class FLORA:
     wait.until(EC.visibility_of_element_located(LOCATORS.PAY_BUTTON_CASSA)).click()
     wait.until(EC.visibility_of_element_located(LOCATORS.PAY_BUTTON_FORM)).click()
     wait.until(EC.element_to_be_clickable(LOCATORS.PAY_BUTTON_FORM_CLIK)).click()
-    sleep(250000)
+    sleep(10)
+    wait.until(EC.element_to_be_clickable(LOCATORS.PAY_BUTTON_FORM_CLIK_OK)).click()
+
+    finish = datetime.datetime.now()
+    print('Тест пробегает за ' + str(finish - start))
+    # sleep(100)
+    # sleep(250000)
