@@ -51,7 +51,7 @@ class LOCATORS:
         'xpath',
         '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
     DS_ALTYWKA_ELSE = ('xpath', '//*[text()="Начать рабочий день"]')
-    DS_ALTYWKA_3 = ('xpath', '//*[text()="ДЦ Алтуфьево Митцубиши" ]')
+    DS_ALTYWKA_3 = ('xpath', '//*[text()="ДЦ Алтуфьево Митцубиши"]')
     DS_ALTYWKA_4 = (
         'xpath',
         '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary"]')
@@ -73,6 +73,15 @@ class LOCATORS:
                          '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/div[2]/div')
     SALE_ASP = ('xpath',
                 '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div/div[1]/div[2]')
+
+    # CHOICE_DS = ('xpath', '//div[@class="need-type-responsible__field"]')
+    # CHOICE_DS = ('xpath', '//div[@class="or-autocomplete__inner-value"]')
+    CHOICE_DS = (
+        'xpath',
+        '/html/body/div/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[4]/div[2]/div/div[2]/div/div/div')
+    CHOICE_DS_1 = (
+        'xpath', '//div[@class="need-type-responsible__autocomplete-item"]//span[text()="ДЦ Алтуфьево Митцубиши"]')
+
     CONTINUE_ASP = ('xpath',
                     '//*[@id="app"]/div[1]/div/div[1]/div[2]/div/div/div/div/div/div/div/div[3]/div[1]/div[2]/div/button[2]')
     INPYT_SOTR = ('xpath',
@@ -104,3 +113,10 @@ class LOCATORS:
     PAY_BUTTON_FORM = 'xpath', '//button[@class="or-button or-button_color-pink or-button_m or-button_wide or-button_primary t2"]'
     PAY_BUTTON_FORM_CLIK = 'xpath', '//button[@class="or-button or-button_color-pink or-button_xl or-button_wide or-button_primary payment-params__content-footer-button"]'
     PAY_BUTTON_FORM_CLIK_OK = 'xpath', '//button[@class="or-button or-button_color-pink or-button_m or-button_wide or-button_primary t2"]'
+    # KP_GO = 'xpath', '//span[@class="asp-deal__content-panel-list-item-name t1" and text()="Формирование КП"]'
+    KP_BUTTON = 'xpath', '//button[@class="or-button or-button_color-pink or-button_md or-button_wide or-button_primary asp-deal-sell-offer-generation__submit-button"]'
+    KP_BUTTON_YES = 'xpath', '//button[@class="or-button or-button_color-pink or-button_md-fluid or-button_wide or-button_primary confirm-option-modal__footer-button"]'
+    WORK_TABLES = 'xpath', '/html/body/div/div[1]/div/header/div[1]/div[1]/div[1]/button[1]'
+    TASKS = 'xpath', '//div[@class="or-tab-switcher__item"]/span[text()="Задачи подчиненных"]'
+    NUMBER_TASK = 'xpath', '//span[@class="or-task__table-columns-item-text"]'
+    NUMBER_TASK_ASERT = 'xpath', 'и подчиненных"]'

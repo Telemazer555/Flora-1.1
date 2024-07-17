@@ -37,11 +37,14 @@ class TestFloraPay(BasePage):
         self.element_is_visible(LOCATORS.VIZIT).click()
         self.element_is_visible(LOCATORS.CONTINUE).click()
         self.element_is_visible(LOCATORS.FIO).click()
-        self.element_is_visible(LOCATORS.FIO_INPUT).send_keys('Агаев Павел Вячеславович')
+        # self.element_is_visible(LOCATORS.FIO_INPUT).send_keys('Агаев Павел Вячеславович')
+        self.element_is_visible(LOCATORS.FIO_INPUT).send_keys('Вишнякова Полина Владимировна')
         self.elements_are_visible(LOCATORS.FIO_CONTINUE)[0].click()
         self.element_is_visible(LOCATORS.FIO_CONTINUE_2IS4).click()
         self.element_is_visible(LOCATORS.SALE_ASP).click()
         self.element_is_visible(LOCATORS.CONTINUE_ASP).click()
+        self.element_is_visible(LOCATORS.CHOICE_DS).click()
+        self.element_is_visible(LOCATORS.CHOICE_DS_1).click()
         self.element_is_visible(LOCATORS.INPYT_SOTR).click()
         self.element_is_visible(LOCATORS.NAZNACIT).click()
         self.element_is_visible(LOCATORS.BATTON).click()
@@ -80,7 +83,9 @@ class TestFloraPay(BasePage):
         self.elements_are_visible(LOCATORS.PDKP)[1].click()
         time.sleep(12)
         self.element_is_visible(LOCATORS.PDKP_PODPISANT).click()
-        PODPISANT = self.elements_are_visible(LOCATORS.PDKP_PODPISANT_CLICK)[1]
+        # print('Вот тут надо смотреть крыче')
+        # time.sleep(1200)
+        PODPISANT = self.elements_are_visible(LOCATORS.PDKP_PODPISANT_CLICK)[0]
         self.go_to_element(PODPISANT)
         PODPISANT.click()
         self.element_is_visible(LOCATORS.PDKP_INPUT_1).click()
@@ -88,7 +93,7 @@ class TestFloraPay(BasePage):
         self.element_is_visible(LOCATORS.PDKP_INPUT_2).click()
         self.element_is_visible(LOCATORS.PDKP_INPUT_2_2).send_keys('08.06.2030')
         self.element_is_visible(LOCATORS.PDKP_BUTTON).click()
-        self.element_is_visible(LOCATORS.PDKP_BUTTON2).click()
+        self.element_is_visible(LOCATORS.PDKP_BUTTON2).click() ### падает с таймаутом
         self.element_is_visible(LOCATORS.PDKP_BUTTON3).click()
         self.element_is_visible(LOCATORS.PDKP_BUTTON4).click()
         self.element_is_visible(LOCATORS.PAY_BUTTON).click()
@@ -96,3 +101,20 @@ class TestFloraPay(BasePage):
         self.element_is_visible(LOCATORS.PAY_BUTTON_FORM).click()
         self.element_is_visible(LOCATORS.PAY_BUTTON_FORM_CLIK).click()
         # self.element_is_clickable(LOCATORS.PAY_BUTTON_FORM_CLIK_OK).click()
+
+    def oformlenie_kp_bez_dopov(self):
+        self.element_is_visible_long(LOCATORS.SDELKA).click() #### Решить вопрос с этой строкой
+        self.element_is_visible_long(LOCATORS.SDELKA_AM).click()
+        self.elements_are_visible(LOCATORS.PDKP)[1].click()
+        KP_BUTTON = self.element_is_visible_long(LOCATORS.KP_BUTTON)
+        self.go_to_element(KP_BUTTON)
+        KP_BUTTON.click()
+        self.element_is_visible_long(LOCATORS.KP_BUTTON_YES).click()
+        Task = self.elements_are_visible(LOCATORS.NUMBER_TASK)[1]
+        with open(file=r'C:\Users\forsw\PycharmProjects\Flora-1.1\locators\TASK.py', mode='w',
+                  encoding='utf-8') as file_vin:
+            file_vin.write(Task.text)
+
+    def find_task(self):
+        self.element_is_visible(LOCATORS.WORK_TABLES).click()
+        self.element_is_visible(LOCATORS.TASKS).click()

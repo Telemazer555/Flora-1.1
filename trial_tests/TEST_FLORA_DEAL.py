@@ -47,6 +47,12 @@ class FLORA:
     wait.until(EC.visibility_of_element_located(LOCATORS.PASSWORD)).send_keys('Ww12345!')
     ### жмём войти  ###
     wait.until(EC.visibility_of_element_located(LOCATORS.LOGIN)).click()
+    sleep(3)
+    url_deal_test = driver.current_url
+    page_cookies = driver.get_cookies()
+    print(page_cookies)
+    driver.close()
+    driver.quit()
 
     DC = wait.until(EC.visibility_of_element_located(LOCATORS.DS_ALTYWKA))
     if DC.text == 'ДЦ Алтуфьево Митцубиши':
